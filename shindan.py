@@ -15,7 +15,7 @@ if not path.exists(cache_path):
 @sv.on_fullmatch(('PCR女友','pcr女友'))
 async def get_pcr_shindan(bot,ev):
     await bot.send(ev,f"正在生成中，请稍后")
-    if "card" in ev.sender.keys():
+    if "card" in ev.sender.keys() and ev.sender["card"] != '':
         user_name = ev.sender["card"] 
     else:
         user_name = ev.sender["nickname"] 
