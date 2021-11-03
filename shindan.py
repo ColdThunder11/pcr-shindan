@@ -5,7 +5,7 @@ from typing import *
 from playwright.async_api import async_playwright
 
 
-sv = Service('PCR女友',manage_priv=priv.SUPERUSER)
+sv = Service('PCR女友')
 
 cache_path = path.join(path.abspath(path.dirname(__file__)),"cache")
 
