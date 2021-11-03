@@ -1,13 +1,16 @@
-from os import path
-from hoshino import Service, priv
+import os
 import traceback
-from typing import *
+from os import path
+from hoshino import Service
 from playwright.async_api import async_playwright
 
 
 sv = Service('PCR女友')
 
 cache_path = path.join(path.abspath(path.dirname(__file__)),"cache")
+
+if not path.exists(cache_path):
+    os.mkdir(cache_path)
 
 @sv.on_fullmatch(('PCR女友','pcr女友'))
 async def get_pcr_shindan(bot,ev):
